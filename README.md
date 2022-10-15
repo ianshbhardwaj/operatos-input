@@ -1,1 +1,0 @@
-# operatos-input
