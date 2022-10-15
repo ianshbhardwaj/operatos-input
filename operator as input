@@ -1,0 +1,67 @@
+package Lab5;
+import java.util.Random;
+import java.util.Scanner;
+
+
+public class Lab5 {
+    public static void main(String[] args)
+    {
+        Scanner keyboard = new Scanner(System.in);
+        double x, y;
+        boolean exit=false;
+        boolean yn;
+
+        while(!exit)
+        {
+            System.out.println("Enter the 1st double value: ");
+            x=keyboard.nextInt();
+            System.out.println("Enter the 2nd double value: ");
+            y=keyboard.nextInt();
+            System.out.println("Enter Operator: ");
+                char operator = keyboard.next().charAt(0);
+            double add=x+y;
+            double sub=x-y;
+            double mul=x*y;
+            double div=x/y;
+
+            switch(operator) {
+                case '+': {
+                    System.out.printf("The Result is %f %c %f= %f\n", x,operator,y,add);
+                    break;
+                }
+                case '-': {
+                    System.out.printf("The Result is %f %c %f= %f\n", x,operator,y,sub);
+                    break;
+                }
+                case '*': {
+                    System.out.printf("The Result is %f %c %f= %f\n", x,operator,y,mul);
+                    break;
+                }
+                case '/': {
+                    if (y == 0)
+                    {
+                        System.out.println("Incorrect input, divide by zero is not allowed, start over.\n");
+                        continue;
+                    }
+                    else
+                    {
+
+                        System.out.printf("The Result is %f %c %f= %f\n", x,operator,y,div);
+                    }
+                    break;
+                }
+                default: {
+                    System.out.println("Invalid operator, start over.");
+                    continue;
+                }
+
+            }
+            System.out.println("Would you like to repeat (y/n):");
+            String yesno=keyboard.next();
+             if(yesno.equals("n"))
+            {
+                break;
+            }
+        }
+    }
+}
